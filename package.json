@@ -11,7 +11,7 @@
   ],
   "private": true,
   "scripts": {
-    "tag": "git tag -a v${npm_package_version} -m \"version ${npm_package_version}\"; git push origin v${npm_package_version}"
+    "git:tag": "git tag -a v${npm_package_version} -m \"version ${npm_package_version}\"; git push origin v${npm_package_version}"
   },
   "dependencies": {
     "cross-env": "^5.2.0"
