@@ -1,0 +1,19 @@
+{
+  "name": "mirthaws",
+  "version": "0.0.2",
+  "license": "GNU Affero General Public License v3.0",
+  "contributors": [
+    {
+      "name": "Michael Hobbs",
+      "email": "michael.lee.hobbs@gmail.com",
+      "url": "https://www.linkedin.com/in/michael-hobbs-4a836557/"
+    }
+  ],
+  "private": true,
+  "scripts": {
+    "tag": "git tag -a v${npm_package_version} -m \"version ${npm_package_version}\"; git push origin v${npm_package_version}"
+  },
+  "dependencies": {
+    "cross-env": "^5.2.0"
+  }
+}
