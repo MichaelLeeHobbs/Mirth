@@ -1,0 +1,36 @@
+version: '3.7'
+
+services:
+  db:
+    image: postgres
+    volumes:
+      - mirth-db:/var/lib/postgresql/data
+    ports:
+      - "15432:5432"
+    env_file: .env.postgres.dev
+    networks:
+      - mirth
+
+  mirth:
+    build:
+      context: ./src
+      dockerfile: Dockerfile.dev
+    image: mirth:dev
+    volumes:
+      - mirth-appdata:/opt/mirthconnect/appdata
+      - mirth-conf:/opt/mirthconnect/conf
+    ports:
+      - "8180:8080"
+      - "8443:8443"
+      - "5000:5000"
+    env_file: .env.mirth.dev
+    networks:
+      - mirth
+
+networks:
+  mirth:
+
+volumes:
+  mirth-db:
+  mirth-appdata:
+  mirth-conf:
