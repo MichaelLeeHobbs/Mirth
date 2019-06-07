@@ -28,9 +28,11 @@ yes | cp -rf /opt/mirthconnect/confbase/mcserver.vmoptions /opt/mirthconnect/con
 
 # write Admin max heap?
 ADMIN_MAX_HEAP="${ADMIN_MAX_HEAP:-512m}"
+/bin/sed -i "s|\${ADMIN_MAX_HEAP}|$ADMIN_MAX_HEAP|g" /opt/mirthconnect/conf/mirth.properties
 
 # write Javascript Version
 JS_VER="${JS_VER:-es6}"
+/bin/sed -i "s|\${JS_VER}|$JS_VER|g" /opt/mirthconnect/conf/mirth.properties
 
 # write DB Type
 DB_TYPE="${DB_TYPE:-derby}"
@@ -39,10 +41,10 @@ DB_TYPE="${DB_TYPE:-derby}"
 # generate DB URL
 DB_HOST="${DB_HOST:-db}"
 DB_URL="jdbc:derby:\${dir.appdata}/mirthdb;create=true"
-if [[ "$DB_TYPE" = "postgres" ]]; then DB_URL = "jdbc:postgresql://${DB_HOST}:${DB_PORT:-5432}/${DB_NAME:-mirthdb}"; fi
-if [[ "$DB_TYPE" = "mysql" ]]; then DB_URL = "jdbc:mysql://${DB_HOST}:${DB_PORT:-3306}/${DB_NAME:-mirthdb}"; fi
-if [[ "$DB_TYPE" = "oracle" ]]; then DB_URL = "jdbc:oracle:thin:@${DB_HOST}:${DB_PORT:-1521}/${DB_NAME:-DB}"; fi
-if [[ "$DB_TYPE" = "sqlserver" ]]; then DB_URL = "jdbc:jtds:sqlserver://${DB_HOST}:${DB_PORT:-1433}/${DB_NAME:-mirthdb}"; fi
+if [[ "$DB_TYPE" = "postgres" ]]; then DB_URL="jdbc:postgresql://${DB_HOST}:${DB_PORT:-5432}/${DB_NAME:-mirthdb}"; fi
+if [[ "$DB_TYPE" = "mysql" ]]; then DB_URL="jdbc:mysql://${DB_HOST}:${DB_PORT:-3306}/${DB_NAME:-mirthdb}"; fi
+if [[ "$DB_TYPE" = "oracle" ]]; then DB_URL="jdbc:oracle:thin:@${DB_HOST}:${DB_PORT:-1521}/${DB_NAME:-DB}"; fi
+if [[ "$DB_TYPE" = "sqlserver" ]]; then DB_URL="jdbc:jtds:sqlserver://${DB_HOST}:${DB_PORT:-1433}/${DB_NAME:-mirthdb}"; fi
 # write DB URL
 /bin/sed -i "s|\${DB_URL}|$DB_URL|g" /opt/mirthconnect/conf/mirth.properties
 
@@ -93,6 +95,6 @@ cd /opt/mirthconnect
     -Dexe4j.moduleName=/opt/mirthconnect/mcservice \
     -Dinstall4j.launcherId=144 -Dinstall4j.swt=false \
     -Di4jv=0 -Di4jv=0 -Di4jv=0 -Di4jv=0 -Di4jv=0 -server \
-    -Xmx1024m -Djava.awt.headless=true -Dapple.awt.UIElement=true \
+    -Xmx${JVM_XMX} -Djava.awt.headless=true -Dapple.awt.UIElement=true \
     -Di4j.vpt=true -classpath /opt/mirthconnect/.install4j/i4jruntime.jar:/opt/mirthconnect/mirth-server-launcher.jar \
     com.install4j.runtime.launcher.UnixLauncher start 69b090a9 0 0 com.mirth.connect.server.launcher.MirthLauncher
