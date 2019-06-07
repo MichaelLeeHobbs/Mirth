@@ -1,0 +1,4 @@
+-server
+-Xmx${JVM_XMX}
+-Djava.awt.headless=true
+-Dapple.awt.UIElement=true
