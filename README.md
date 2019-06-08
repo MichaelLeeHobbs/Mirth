@@ -7,8 +7,9 @@ Mirth Containerized
 This image provides various versions that are available via tags. `latest` tag is not used at this time. The tags reflect both the version of Mirth Connect the image uses as well as the image version for the specific version of Mirth Connect the images is being built for.
 The image version uses [Semantic Versioning 2.0.0](https://semver.org/) with the Mirth Connection version and image version being separated by a -v.
 
+Tag break down: {Mirth Connect Version}-v{Major.Minor.Patch}
+
 | Tag | Description |
-| {MCVersion}-v{Major.Minor.Patch} | --- |
 | :----: | --- |
 | 3.7.0.b2399-v0.0.8 | Beta image 0.0.8 with Mirth Connect running on OpenJDK 8 |
 
