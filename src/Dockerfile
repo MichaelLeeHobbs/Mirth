@@ -7,19 +7,12 @@ RUN apk add curl tar sed rsync
 RUN curl http://downloads.mirthcorp.com/connect/$MIRTH_CONNECT_VERSION/mirthconnect-$MIRTH_CONNECT_VERSION-unix.tar.gz -o mirth.tar.gz
 RUN /usr/bin/tar -xzf ./mirth.tar.gz && mv Mirth\ Connect /opt/mirthconnect && rm -f mirth.tar.gz
 
-#COPY envSetup.sh /opt/mirthconnect/
 COPY start.sh /opt/mirthconnect/
 COPY mcserver.vmoptions /opt/mirthconnect/confbase/
 COPY mirth.properties /opt/mirthconnect/confbase/
 
-RUN chmod +x /opt/mirthconnect/start.sh && mkdir /opt/mirthconnect/appdata \
-#    && mkdir /opt/mirthconnect/confbase \
-#    && cp /opt/mirthconnect/conf/*.* /opt/mirthconnect/confbase/
-     ;
+RUN chmod +x /opt/mirthconnect/start.sh && mkdir /opt/mirthconnect/appdata
 
 EXPOSE 8080 8443
 
 CMD /opt/mirthconnect/start.sh
-#CMD /opt/mirthconnect/envSetup.sh \
-#    && /opt/mirthconnect/mcservice restart \
-#    && tail -F /opt/mirthconnect/logs/mirth.log
