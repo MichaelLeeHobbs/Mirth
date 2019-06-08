@@ -1,3 +1,5 @@
+FROM openjdk:8-jre-alpine
+
 #ARG BUILD_DATE
 ARG SOURCE_COMMIT
 ARG DOCKER_TAG
@@ -9,8 +11,6 @@ LABEL org.label-schema.name="Mirth Containerized" \
       org.label-schema.vcs-url="https://github.com/MichaelLeeHobbs/Mirth" \
       org.label-schema.version=$DOCKER_TAG \
       org.label-schema.schema-version="1.0"
-
-FROM openjdk:8-jre-alpine
 
 # ENV MIRTH_CONNECT_VERSION 3.6.1.b220
 ENV MIRTH_CONNECT_VERSION 3.7.0.b2399
