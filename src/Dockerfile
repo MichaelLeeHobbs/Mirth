@@ -12,8 +12,7 @@ LABEL org.label-schema.name="Mirth Containerized" \
       org.label-schema.version=$DOCKER_TAG \
       org.label-schema.schema-version="1.0"
 
-# ENV MIRTH_CONNECT_VERSION 3.6.1.b220
-ENV MIRTH_CONNECT_VERSION 3.7.0.b2399
+ENV MIRTH_CONNECT_VERSION 3.7.1.b243
 
 RUN apk add curl tar sed
 RUN curl http://downloads.mirthcorp.com/connect/$MIRTH_CONNECT_VERSION/mirthconnect-$MIRTH_CONNECT_VERSION-unix.tar.gz -o mirth.tar.gz \

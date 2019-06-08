@@ -14,7 +14,7 @@ services:
   mirth:
     build:
       context: ./src
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     image: mirth:dev
     volumes:
       - mirth-appdata:/opt/mirthconnect/appdata
