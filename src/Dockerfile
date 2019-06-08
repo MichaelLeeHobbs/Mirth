@@ -30,4 +30,3 @@ RUN chmod +x /opt/mirthconnect/start.sh && mkdir /opt/mirthconnect/appdata
 EXPOSE 8080 8443
 
 CMD /opt/mirthconnect/start.sh
-limitations
