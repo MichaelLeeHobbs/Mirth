@@ -85,6 +85,12 @@ PW_REUSE_PERIOD="${PW_REUSE_PERIOD:-0}"
 PW_REUSE_LIMIT="${PW_REUSE_LIMIT:-0}"
 /bin/sed -i "s|\${PW_REUSE_LIMIT}|$PW_REUSE_LIMIT|g" /opt/mirthconnect/conf/mirth.properties
 
+# HTTP(S) ports
+HTTP_PORT="${HTTP_PORT:-8080}"
+/bin/sed -i "s|\${HTTP_PORT}|$HTTP_PORT|g" /opt/mirthconnect/conf/mirth.properties
+HTTPS_PORT="${HTTPS_PORT:-8443}"
+/bin/sed -i "s|\${HTTPS_PORT}|$HTTPS_PORT|g" /opt/mirthconnect/conf/mirth.properties
+
 # mcserver.vmoptions
 # write JVM
 JVM_XMX="${JVM_XMX:-1024m}"
