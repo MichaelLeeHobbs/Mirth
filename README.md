@@ -1,13 +1,18 @@
-# Mirth
-Mirth Containerized
-
+# Mirth Connect Containerized
+[![](https://images.microbadger.com/badges/image/michaelleehobbs/mirth:3.7.0.b2399-v0.0.8.svg)](https://microbadger.com/images/michaelleehobbs/mirth:3.7.0.b2399-v0.0.8 "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/michaelleehobbs/mirth:3.7.0.b2399-v0.0.8.svg)](https://microbadger.com/images/michaelleehobbs/mirth:3.7.0.b2399-v0.0.8 "Get your own version badge on microbadger.com")
+![](https://img.shields.io/docker/pulls/michaelleehobbs/mirth.svg)
+![](https://img.shields.io/docker/stars/michaelleehobbs/mirth.svg)
+![](https://img.shields.io/docker/cloud/build/michaelleehobbs/mirth.svg)
+![](https://img.shields.io/github/issues/michaelleehobbs/mirth.svg)
+![](https://img.shields.io/github/license/michaelleehobbs/mirth.svg)
 
 ## Version Tags
 
 This image provides various versions that are available via tags. `latest` tag is not used at this time. The tags reflect both the version of Mirth Connect the image uses as well as the image version for the specific version of Mirth Connect the images is being built for.
 The image version uses [Semantic Versioning 2.0.0](https://semver.org/) with the Mirth Connection version and image version being separated by a -v.
 
-Tag break down: {Mirth Connect Version}-v{Major.Minor.Patch}
+Tag break down: `{Mirth Connect Version}`-v`{Major.Minor.Patch}`
 
 | Tag | Description |
 | :----: | --- |
@@ -17,7 +22,7 @@ Tag break down: {Mirth Connect Version}-v{Major.Minor.Patch}
 
 Here are some example snippets to help you get started creating a container.
 
-### docker
+### Docker
 ```
 docker create \
   --name=mirth \
@@ -121,3 +126,18 @@ DB_HOST=mirthdb.cjimkjtl3pds.us-east-1.rds.amazonaws.com
 DB_USERNAME=postgres
 DB_PASSWORD=password
 ```
+
+## Planed Features
+### Coming Soon
+* Improved Decimation
+* Multiple base version ie Mirth Connect 3.4, 3.5, 3.6, etc...
+
+### Down the Road
+* More Examples! 
+* Step by Step guides for setting up MC in a variety of ways i.e. deployed to AWS using RDS and EFS 
+* Images with Custom Libs
+* Poor Mans clustering ie Clustering without 
+
+## Known Issues and Limitations
+* When running multiple MC Containers off the same Database ie clustering Mirth without the clustering plugin has many issues with polling channels. 
+Thus poor mans clustering should only be used for non-polling channels.  
