@@ -16,7 +16,7 @@ Tag break down: `{Mirth Connect Version}`-v`{Major.Minor.Patch}`
 
 | Tag | Description |
 | :----: | --- |
-| 3.7.0.b2399-v0.0.8 | Beta image 0.0.8 with Mirth Connect running on OpenJDK 8 |
+| 3.7.0.b2399-v0.1.0 | Beta image 0.1.0 with Mirth Connect running on OpenJDK 8 |
 
 ## Usage
 
@@ -129,7 +129,7 @@ DB_PASSWORD=password
 
 ## Planed Features
 ### Coming Soon
-* Improved Decimation
+* Improved Documentation
 * Multiple base version ie Mirth Connect 3.4, 3.5, 3.6, etc...
 
 ### Down the Road
