@@ -14,7 +14,7 @@ LABEL org.label-schema.name="Mirth Containerized" \
 
 ENV MIRTH_CONNECT_VERSION 3.7.1.b243
 
-RUN apk add curl tar sed
+RUN apk add curl tar sed rsync
 RUN curl http://downloads.mirthcorp.com/connect/$MIRTH_CONNECT_VERSION/mirthconnect-$MIRTH_CONNECT_VERSION-unix.tar.gz -o mirth.tar.gz \
     && /usr/bin/tar -xzf ./mirth.tar.gz \
     && mv Mirth\ Connect /opt/mirthconnect \
