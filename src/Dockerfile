@@ -14,11 +14,13 @@ LABEL org.label-schema.name="Mirth Containerized" \
 
 ENV MIRTH_CONNECT_VERSION 3.6.2.b232
 
-RUN apk add curl tar sed
+RUN apk add curl tar sed rsync
 RUN curl http://downloads.mirthcorp.com/connect/$MIRTH_CONNECT_VERSION/mirthconnect-$MIRTH_CONNECT_VERSION-unix.tar.gz -o mirth.tar.gz \
     && /usr/bin/tar -xzf ./mirth.tar.gz \
     && mv Mirth\ Connect /opt/mirthconnect \
-    && rm -f mirth.tar.gz
+    && rm -f mirth.tar.gz \
+    && mkdir /opt/mirthconnect/confbase \
+    && cp /opt/mirthconnect/conf/*.* /opt/mirthconnect/confbase/
 
 COPY start.sh /opt/mirthconnect/
 COPY mcserver.vmoptions /opt/mirthconnect/confbase/

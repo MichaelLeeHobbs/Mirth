@@ -15,6 +15,9 @@ else
     KEYSTORE_TYPE=""
 fi
 
+# Setup base config files
+rsync -a -v --ignore-existing /opt/mirthconnect/confbase/ /opt/mirthconnect/conf
+
 # setup template files
 # unalias cp to make sure no overwrite issues
 yes | cp -rf /opt/mirthconnect/confbase/mirth.properties /opt/mirthconnect/conf/mirth.properties
