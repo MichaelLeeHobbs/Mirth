@@ -18,6 +18,7 @@ Tag break down: `{Mirth Connect Version}`-v`{Major.Minor.Patch}`
 | :----: | --- |
 | 3.7.1.b243-v0.1.0 | Beta image 0.1.0 with Mirth Connect 3.7.1.b243 running on OpenJDK 8 |
 | 3.7.0.b2399-v0.1.0 | Beta image 0.1.0 with Mirth Connect 3.7.0.b2399 running on OpenJDK 8 |
+| 3.6.2.b232-v0.1.0 | Beta image 0.1.0 with Mirth Connect 3.6.2.b232 running on OpenJDK 8 |
 
 ## Usage
 
