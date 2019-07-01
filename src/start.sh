@@ -61,6 +61,16 @@ DB_MAX_CONNECTIONS="${DB_MAX_CONNECTIONS:-20}"
 DB_MAX_READONLY_CONNECTIONS="${DB_MAX_READONLY_CONNECTIONS:-20}"
 /bin/sed -i "s|\${DB_MAX_READONLY_CONNECTIONS}|$DB_MAX_READONLY_CONNECTIONS|g" /opt/mirthconnect/conf/mirth.properties
 
+# write Session settings
+SESSION_STORE="${SESSION_STORE:-false}"
+/bin/sed -i "s|\${SESSION_STORE}|$SESSION_STORE|g" /opt/mirthconnect/conf/mirth.properties
+SESSION_STORE_TABLE="${SESSION_STORE_TABLE:-sessiondata}"
+/bin/sed -i "s|\${SESSION_STORE_TABLE}|$SESSION_STORE_TABLE|g" /opt/mirthconnect/conf/mirth.properties
+SESSION_CACHE="${SESSION_CACHE:-default}"
+/bin/sed -i "s|\${SESSION_CACHE}|$SESSION_CACHE|g" /opt/mirthconnect/conf/mirth.properties
+SESSION_MAX_INACTIVE_INTERVAL="${SESSION_MAX_INACTIVE_INTERVAL:-259200}"
+/bin/sed -i "s|\${SESSION_MAX_INACTIVE_INTERVAL}|$SESSION_MAX_INACTIVE_INTERVAL|g" /opt/mirthconnect/conf/mirth.properties
+
 # write password settings
 PW_MIN_LENGTH="${PW_MIN_LENGTH:-0}"
 /bin/sed -i "s|\${PW_MIN_LENGTH}|$PW_MIN_LENGTH|g" /opt/mirthconnect/conf/mirth.properties

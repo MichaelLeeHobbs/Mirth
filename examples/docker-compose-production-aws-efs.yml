@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   mirth:
-    image: michaelleehobbs/mirthaws:version-v3.7.0.b2399-v0.0.3
+    image: michaelleehobbs/mirth:3.7.1.b243-v0.3.0
     volumes:
       - /efs/volumes/mirth/appdata:/opt/mirthconnect/appdata
       - /efs/volumes/mirth/conf:/opt/mirthconnect/conf
